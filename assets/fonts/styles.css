@@ -122,6 +122,11 @@ a {
   text-transform: uppercase;
 }
 
+.footer-text a {
+  text-decoration: none;
+  color: white;
+}
+
 .footer-mail {
   text-align: center;
 }
