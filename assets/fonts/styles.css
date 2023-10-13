@@ -1,20 +1,44 @@
-/* Reset default margin and padding for better consistency */
-body,
-ul {
+
+ .menu-items ul li{
+    display: list-item;
+    padding: 5px 10px;
+    margin: 0 3px;
+  }
+
+  .menu-items ul {
+    
+    list-style-type:none;
+    display:flex;
+    justify-content: center;
+    font: roboto-sans-serif;
+  }
+
+.menu-items {
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif;
-    
+    width : 100%;
+}
+
+a {
+    text-decoration: none;
 }
 
 .banner {
-    box-shadow: 0 0 20px 0.5PX #d5d2d2;
-    background-color: rgb(255, 255, 255);
-    padding-left: 54.109px;
-    padding-right: 54.109px;
+        width: 100%;
+        
+        background-color: rgb(199, 197, 197);
 }
 
-.list-menu {
-    border: solid 1PX black;
+.menu-items {
+display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.list-items {
+    display: inline-block;
+    align-items: center;
 }
 
