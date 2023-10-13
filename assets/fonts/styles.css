@@ -1,6 +1,7 @@
 body {
     margin: 0;
     padding: 0;
+    background-color: #d9d9d9;
 }
 
 
@@ -72,3 +73,164 @@ a {
     margin-left: 52%;
 }
 
+.footer-banner {
+  display: absolute;
+  bottom: 0;
+  padding: 80px 0px 80px 0px;
+  background-color: #343434;
+  max-height: 329px;
+}
+
+.footer-items {
+  display: flex;
+  
+  justify-content: space-between;
+}
+
+.footer-items img {
+  align-items: center;
+}
+
+#footer-img-2 {
+  width : 463px;
+  height: 95px;
+  margin-right: 15px;
+}
+
+#footer-img-1 {
+  margin-left: 122px;
+  width: 384px;
+  height: 131px;
+}
+
+.footer-text, .footer-mail {
+  color: white;
+}
+
+.footer-text-container {
+  position: absolute;
+  left: 50%;
+}
+
+.footer-text {
+  position: relative;
+  left: -50%;
+  font-size: 24px;
+  font-family: inherit;
+  font-weight: 500;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.footer-mail {
+  text-align: center;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.button-items img {
+  height: 46px;
+  width: 46px;
+  margin: 0 10px; /* Adjusted the margin values */
+}
+
+.button-items {
+  display: flex;
+  align-items: center;
+}
+
+.title-main {
+  display: flex;
+  max-width: 100%;
+  justify-content: space-between;
+  align-items: center; /* Center the items vertically */
+  padding-bottom: 20px;
+  padding-top: 20px;
+  
+}
+
+.title-main h1 {
+  padding-left: 30%;
+  color: #5C5C5C;
+}
+
+.main-container {
+  height: 1200px;
+  margin: 0 10%;
+}
+
+.main-container .img-back {
+  display: block;
+  height: 90%;
+  width: 100%;
+  background-color: #c3c3c3;
+  border-radius: 30PX;
+}
+
+.all-download {
+  display: block;
+  width: 100%;
+  height: 200px;
+  background-color: #d9d9d9;
+}
