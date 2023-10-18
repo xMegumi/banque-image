@@ -253,6 +253,9 @@ input:checked + .slider:before {
   border-radius: 30PX;
 
 }
+.img-back img:hover {
+  opacity: 0.70;
+}
 
 .all-download {
   display: block;
@@ -260,3 +263,20 @@ input:checked + .slider:before {
   height: 200px;
   background-color: #d9d9d9;
 }
+
+@media screen and (max-width: 1720px) and (orientation: landscape) { 
+  .column {
+    flex: 49.27%;
+    max-width: 49.27%;
+    padding: 0 4px;
+  }
+
+  .column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+    border-radius: 30PX;
+  
+  }
+  
+ }
