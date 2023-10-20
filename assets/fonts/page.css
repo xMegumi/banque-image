@@ -147,7 +147,7 @@ a {
     margin: 50px 5%;
 }
 
-  #image {
+  #displayed-image {
     height : auto;
     width: 800px;
     padding: 10px;
@@ -157,7 +157,13 @@ a {
     width: 100%;
     font-size: 21.7px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
+
+
   
   .modal {
     font-family: 'roboto';

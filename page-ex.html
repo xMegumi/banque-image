@@ -37,10 +37,11 @@
     <main>
         <div class="container">
             <div class="img-back">
-                <img src="assets/images/jpg/2.jpg" id="image">
+                <img id="displayed-image" src="" alt="Displayed Image">
             </div>
             <div class="text">
-                <h1>Images</h1>
+                <div class="text-container">
+                <h1>Image</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita deleniti illo quos ratione. Libero
                     perspiciatis aspernatur aut voluptatum qui nisi, fugiat repudiandae! Beatae incidunt quos nisi,
                     ipsam consectetur asperiores ex. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente
@@ -65,6 +66,7 @@
                         <img src="assets/images/jpg/download.png" alt="" id="downloadImg">
                     </div>
                 </div>
+            </div>
             </div>
         </div>
 
@@ -104,6 +106,22 @@
                     document.body.removeChild(a);
                 });
             }
+
+            document.addEventListener('DOMContentLoaded', function () {
+                const displayedImage = document.getElementById('displayed-image');
+    
+                // Récupérez les paramètres de l'URL
+                const urlParams = new URLSearchParams(window.location.search);
+                const imagePath = urlParams.get('image');
+    
+                // Mettez à jour l'image affichée avec le chemin de l'image passé en paramètre
+                if (imagePath) {
+                    displayedImage.src = imagePath;
+                } else {
+                    displayedImage.src = 'default.jpg'; // Image par défaut si aucun paramètre n'est passé
+                }
+            });
+        
         </script>
     </main>
     <footer>

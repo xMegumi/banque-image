@@ -40,7 +40,7 @@
             <div class="title-main">
                 <h1>Rémi COZOT presents his image bank</h1>
                 <div class="button-items">
-                    <img src="assets/images/grid.png" alt="logo grid">
+                    <img src="assets/images/visualization.png" alt="logo grid">
                     <label class="switch">
                         <input type="checkbox" class="checkbox" id="toggleSwitch">
                         <span class="slider round"></span>
@@ -52,22 +52,22 @@
 
                 <div class="row">
                     <div class="column">
-                        <a href="#"><img src="assets/images/jpg/1.jpg"></a>
-                        <a href="#"><img src="assets/images/jpg/3.jpg"></a>
-                        <a href="#"><img src="assets/images/jpg/9.jpg"></a>
+                        <a href="page-ex.html?image=assets/images/jpg/1.jpg"><img src="assets/images/jpg/1.jpg"></a>
+                        <a href="page-ex.html?image=assets/images/jpg/3.jpg"><img src="assets/images/jpg/3.jpg"></a>
+                        <a href="page-ex.html?image=assets/images/jpg/9.jpg"><img src="assets/images/jpg/9.jpg"></a>
                         
                     </div>
                     <div class="column">
-                        <a href="#"><img src="assets/images/jpg/4.jpg"></a>
-                        <a href="#"><img src="assets/images/jpg/5.jpg"></a>
-                        <a href="#"><img src="assets/images/jpg/6.jpg"></a>
+                        <a href="page-ex.html?image=assets/images/jpg/4.jpg"><img src="assets/images/jpg/4.jpg"></a>
+                        <a href="page-ex.html?image=assets/images/jpg/5.jpg"><img src="assets/images/jpg/5.jpg"></a>
+                        <a href="page-ex.html?image=assets/images/jpg/6.jpg"><img src="assets/images/jpg/6.jpg"></a>
                         <a href="all-images.html#img-more"><div class="see-more">See more</div></a>
                         
                     </div>
                     <div class="column">
-                        <a href="#"><img src="assets/images/jpg/7.jpg"></a>
-                        <a href="#"><img src="assets/images/jpg/8.jpg"></a>
-                        <a href="page-ex.html"><img src="assets/images/jpg/2.jpg"></a>
+                        <a href="page-ex.html?image=assets/images/jpg/7.jpg"><img src="assets/images/jpg/7.jpg"></a>
+                        <a href="page-ex.html?image=assets/images/jpg/8.jpg"><img src="assets/images/jpg/8.jpg"></a>
+                        <a href="page-ex.html?image=assets/images/jpg/2.jpg"><img src="assets/images/jpg/2.jpg"></a>
                         
                         
                         
@@ -167,7 +167,20 @@
             });
         }
 
+        document.addEventListener('DOMContentLoaded', function () {
+            const displayedImage = document.getElementById('displayed-image');
 
+            // Récupérez les paramètres de l'URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const imagePath = urlParams.get('image');
+
+            // Mettez à jour l'image affichée avec le chemin de l'image passé en paramètre
+            if (imagePath) {
+                displayedImage.src = imagePath;
+            } else {
+                displayedImage.src = 'default.jpg'; // Image par défaut si aucun paramètre n'est passé
+            }
+        });
 
 
 
