@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/fonts/page.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
     <title>Rémi COZOT</title>
 
 
@@ -35,9 +36,75 @@
     </header>
     <main>
         <div class="container">
-        <img src="assets/images/jpg/2.jpg">
-        <div class="text"><p>Images</p></div>
-    </div>
+            <div class="img-back">
+                <img src="assets/images/jpg/2.jpg" id="image">
+            </div>
+            <div class="text">
+                <h1>Images</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita deleniti illo quos ratione. Libero
+                    perspiciatis aspernatur aut voluptatum qui nisi, fugiat repudiandae! Beatae incidunt quos nisi,
+                    ipsam consectetur asperiores ex. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente
+                    et, error atque numquam itaque aliquam ex culpa a magnam, iure aliquid minima? Impedit earum animi
+                    ducimus, officia doloribus cumque incidunt! Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Neque doloremque, illum eveniet tenetur ullam possimus qui consequuntur libero quod dignissimos unde
+                    voluptatum animi nobis? Tempore eligendi obcaecati ad et accusamus!</p>
+                <p>Download the image :</p>
+                    <div id="myModal" class="modal">
+                        <div class="modal-content">
+                            <span class="close" id="closeModal">&times;</span>
+                            <h1>WARNING COPYRIGHT</h1>
+                    <p>Downloading copyrighted content without proper authorization is illegal and a violation of
+                        intellectual property rights.</p>
+                        <button id="continueButton">Continue</button>
+                        <button id="cancelButton">Cancel</button>
+                    </div>
+                </div>
+                <div class="downloadButton-container">
+                    <div class="all-download">
+                        <button id="downloadButton">Download</button>
+                        <img src="assets/images/jpg/download.png" alt="" id="downloadImg">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            const downloadButton = document.getElementById('downloadButton');
+            const continueButton = document.getElementById('continueButton');
+            const cancelButton = document.getElementById('cancelButton');
+            const modal = document.getElementById('myModal');
+            const closeModal = document.getElementById('closeModal');
+            const images = document.querySelectorAll('.img-back img');
+
+            downloadButton.addEventListener('click', function () {
+                modal.style.display = 'block';
+            });
+
+            continueButton.addEventListener('click', function () {
+                modal.style.display = 'none';
+                downloadImages();
+            });
+
+            cancelButton.addEventListener('click', function () {
+                modal.style.display = 'none';
+            });
+
+            closeModal.addEventListener('click', function () {
+                modal.style.display = 'none';
+            });
+
+            function downloadImages() {
+                images.forEach((image) => {
+                    const a = document.createElement('a');
+                    a.href = image.src;
+                    a.download = image.alt;
+                    a.style.display = 'none';
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                });
+            }
+        </script>
     </main>
     <footer>
         <div class="footer-banner">
@@ -52,4 +119,5 @@
         </div>
     </footer>
 </body>
+
 </html>

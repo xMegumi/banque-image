@@ -5,6 +5,15 @@ body {
 
 }
 
+html {
+  font-family: 'roboto', arial, helvetica, sans-serif;
+}
+
+p {
+
+  margin-top: 34px;
+  padding: 10px;
+}
 
 .menu-items ul li{
     display: list-item;
@@ -138,13 +147,111 @@ a {
     margin: 50px 5%;
 }
 
-  main img {
+  #image {
     height : auto;
     width: 800px;
     padding: 10px;
   }
 
   .text {
+    width: 100%;
+    font-size: 21.7px;
     text-align: center;
   }
   
+  .modal {
+    font-family: 'roboto';
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  .modal-content {
+    border-radius: 10px;
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30em;
+    text-align: center;
+  }
+  
+  .close {
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    color: #888;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .modal button {
+  
+    background-color: #c3c3c3;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  
+  }
+  
+
+  .modal-content button {
+    margin: 10px;
+  }
+  
+  #downloadButton {
+    background-color: white;
+    border: none;
+    color: #333333;
+    border-radius: 15px 0px 0px 15px;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  
+  }
+  
+  .downloadButton-container .all-download {
+    display: flex;
+    margin: auto;
+    margin-bottom: 10px;
+  }
+  
+  .all-download {
+    margin-right: 10px;
+    width: 220px;
+    height: 60px;
+    box-shadow: -17px 15px 17px -3px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+  }
+  
+  
+  .all-download #downloadImg {
+    border-radius: 0px 15px 15px 0px;
+    float: right;
+    width: 60px;
+    height: 100%;
+  }
+  
+  .all-download #downloadButton {
+    height: auto;
+    width: 160px;
+  }
+  
+  .downloadButton-container {
+    height: auto;
+  }
+  
+  #downloadButton:hover {
+    background-color: #F1F1F1;
+  }
