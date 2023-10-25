@@ -8,7 +8,9 @@ html {
   font-family: 'roboto', arial, helvetica, sans-serif;
 }
 
-
+header {
+  background-color: white;
+}
 .menu-items ul li {
   display: list-item;
   padding: 5px 10px;
@@ -27,7 +29,6 @@ html {
   color: black;
 }
 
-.menu-header-menu {}
 
 .site-title-container {
   margin-top: 20px;
@@ -46,11 +47,13 @@ html {
 
   list-style-type: none;
   display: flex;
-  justify-content: center;
   font: roboto-sans-serif;
 }
 
 .menu-items {
+  display: flex;
+  justify-content: space-between;
+
   margin: 0;
   padding: 0;
   width: 100%;
@@ -66,16 +69,15 @@ a {
   background-color: rgb(255, 255, 255);
 }
 
-.menu-items {
-  display: flex;
 
-}
 
 
 
 .list-items {
   display: inline-block;
-  margin-left: 52%;
+  
+  padding-right: 5px;
+
 }
 
 .footer-banner {
@@ -86,26 +88,23 @@ a {
   max-height: 329px;
 }
 
-.footer-items {
-  display: flex;
 
-  justify-content: space-between;
-}
 
-.footer-items img {
-  align-items: center;
-}
+
+
 
 #footer-img-2 {
   width: 463px;
   height: 95px;
-  margin-right: 15px;
+  margin-right: 50px;
+  float: right;
 }
 
 #footer-img-1 {
-  margin-left: 122px;
+  margin-left: 50px;
   width: 384px;
   height: 131px;
+  float: left;
 }
 
 .footer-text,
@@ -113,19 +112,16 @@ a {
   color: white;
 }
 
-.footer-text-container {
-  position: absolute;
-  left: 50%;
-}
-
 .footer-text {
   position: relative;
-  left: -50%;
   font-size: 24px;
   font-family: inherit;
   font-weight: 500;
   line-height: 1.1;
   text-transform: uppercase;
+  text-align: center;
+  padding-right: 500px;
+  max-width: 100%;
 }
 
 .footer-text a {
@@ -135,9 +131,10 @@ a {
 
 .footer-mail {
   text-align: center;
+  margin-top: 120px;
+  padding-right: 60px;
 }
 
-/* The switch - the box around the slider */
 .switch {
   position: relative;
   display: inline-block;
@@ -145,14 +142,12 @@ a {
   height: 34px;
 }
 
-/* Hide default HTML checkbox */
 .switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
 
-/* The slider */
 .slider {
   position: absolute;
   cursor: pointer;
@@ -249,7 +244,7 @@ input:checked+.slider:before {
 
 /* Create four equal columns that sits next to each other */
 .column {
-  flex: 32.75%;
+  flex: 33.75%;
   max-width: 32.75%;
   padding: 0 4px;
 }
@@ -318,14 +313,13 @@ input:checked+.slider:before {
 
 }
 
-/* Additional styles for buttons if needed */
+
 .modal-content button {
   margin: 10px;
 }
 
 #downloadButton {
   background-color: white;
-  /* Green */
   border: none;
   color: #333333;
   border-radius: 15px 0px 0px 15px;
@@ -390,7 +384,7 @@ input:checked+.slider:before {
   background-color: #555;
 }
 
-.see-more {
+#see-more {
   box-shadow: -17px 15px 17px -3px rgba(0, 0, 0, 0.1);
   text-decoration: none;
   color: black;
@@ -398,7 +392,7 @@ input:checked+.slider:before {
   border: none;
   border-radius: 15px;
   padding: 15px 32px;
-  width: 60%;
+  width: 25%;
   align-items: center;
   text-align: center;
   margin: 30px auto 30px auto;
@@ -406,15 +400,19 @@ input:checked+.slider:before {
   font-size: 16px;
 }
 
-.see-more:hover {
+#see-more:hover {
   background-color: #F1F1F1;
+}
+
+#img-back-all {
+  padding-bottom: 10px;
 }
 
 
 @media screen and (max-width: 1720px) and (orientation: landscape) {
   .column {
-    flex: 49.27%;
-    max-width: 49.27%;
+    flex: 32.65%;
+    max-width: 32.65%;
     padding: 0 4px;
   }
 
@@ -426,4 +424,175 @@ input:checked+.slider:before {
 
   }
 
+}
+
+@media screen and (max-width: 1372px) and (orientation: landscape) {
+  .column {
+    flex: 32.5%;
+    max-width: 32.5%;
+    padding: 0 4px;
+  }
+
+  .column img {
+    margin-top: 8px;
+    vertical-align: middle;
+    width: 100%;
+    border-radius: 30PX;
+
+  }
+
+  .title-main h1 {
+    padding-left: 10%;
+  }
+}
+
+
+
+@media screen and (max-width: 855px) and (orientation: portrait) {
+  .footer-banner {
+    display: flex;
+    flex-direction: column; /* Aligner les éléments en colonne */
+    align-items: center; /* Centrer horizontalement les éléments */
+    text-align: center; /* Centrer le texte à l'intérieur */
+    padding: 15px 0;
+    max-height: none;
+    height: auto;
+    margin: 0;
+  }
+  
+  .footer-text {
+    width: 100%;
+    left: 0;
+    max-height: 20px;
+    padding-top: 10px;
+  }
+  
+  .footer-items {
+    width: 100%;
+    text-align: center; 
+    margin-top: 10px;
+
+  }
+  
+  #footer-img-1 {
+    max-width: 82%; 
+    margin-left: 2em;
+    margin-bottom: 10px;
+
+
+  }
+  
+  .footer-mail {
+    width: 100%;
+    text-align: center; 
+    max-height: 20px;
+  }
+  
+  #footer-img-2 {
+    max-width: 100%; 
+    margin-right: 0;
+    height: auto;
+    width: 95%;
+    padding-left: 8px;
+    padding-right: 8px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+  }
+
+ 
+  .site-title-container {
+    margin: 0px;
+    padding: 0px;
+  }
+  .title-main h1 {
+    margin: auto;
+    padding-left: 0;
+    font-size: 18px;
+  }
+  .menu-items {
+    display: block;
+  }
+
+  
+
+  .site-title-container {
+    padding-top: 10px;
+    padding-left: 10px;
+  }
+
+  .main-container {
+    margin-right: 1%;
+    margin-left: 1%;
+  }
+
+  nav::before {
+    border: solid 1px rgba(136,136,136,.3);
+    content: "☰";
+    display: flex;
+    width: auto;
+    height: auto;
+    float: right;
+    text-align: center;
+    font-family: 'roboto';
+    margin: 10px;
+    padding: 3px 10px 6px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  nav:hover::before {
+    background-color: #DDDDDD;
+  }
+
+  #menu-header-menu {
+    padding-left: 10px;
+  }
+  #menu-header-menu a {
+    font-size: 12px;
+    font-family: 'Roboto';
+    text-transform: uppercase;
+    color: #333333;
+  }
+
+  nav:hover .menu-items ul{
+    display: block;
+  }
+
+  .menu-items ul{
+    display: none;
+    float: left;
+    display: none;
+
+  }
+
+  .menu-items ul li {
+    width: 100%;
+    padding: 10px 8px;
+  }
+  
+  .column {
+    flex: 100%;
+    max-width: 100%;
+
+  }
+
+  .button-items {
+    display: none;
+  }
+  .downloadButton-container .all-download {
+    display: none;
+  }
+
+  .downloadButton-container {
+    height: 50px;
+  }
+
+  .footer-text, .footer-mail {
+    padding-right: 0px;
+    margin-top: 0px;
+    max-width: 100%;
+    height: auto;
+  }
+
+  
 }

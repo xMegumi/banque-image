@@ -7,8 +7,6 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
     <link rel="stylesheet" href="assets/fonts/styles.css">
     <title>Rémi COZOT</title>
-
-
 </head>
 
 <body>
@@ -41,7 +39,7 @@
             <div class="title-main">
                 <h1>Rémi COZOT presents his image bank</h1>
                 <div class="button-items">
-                    <img src="assets/images/grid.png" alt="logo grid">
+                    <img src="assets/images/visualization.png" alt="logo grid">
                     <label class="switch">
                         <input type="checkbox" class="checkbox" id="toggleSwitch">
                         <span class="slider round"></span>
@@ -49,32 +47,15 @@
                     <img src="assets/images/square.png" alt="logo square">
                 </div>
             </div>
-            <div class="img-back">
-
-                <div class="row">
-                    <div class="column">
-                        <a href="#"><img src="assets/images/jpg/1.jpg"></a>
-                        <a href="#"><img src="assets/images/jpg/3.jpg"></a>
-                        <a href="#"><img src="assets/images/jpg/9.jpg"></a>
-                        <a href="#"><img src="assets/images/jpg/11.jpg"></a>
-                        <a href="#"><img src="assets/images/jpg/16.jpg"></a>
+            <div class="img-back" id="img-back-all">
+                <div class="row" id="imgContainer">
+                    <div class="column" id="column1">
 
                     </div>
-                    <div class="column">
-                        <a href="#"><img src="assets/images/jpg/4.jpg"></a>
-                        <a href="#"><img src="assets/images/jpg/5.jpg"></a>
-                        <a href="#"><img src="assets/images/jpg/6.jpg"></a>
-                        
-                        <a href="#"><img src="assets/images/jpg/14.jpg"></a>
-                        <a id="img-more"></a>
-                        <a href="#"><img src="assets/images/jpg/13.jpg"></a>
+                    <div class="column" id="column2">
+
                     </div>
-                    <div class="column">
-                        <a href="#"><img src="assets/images/jpg/7.jpg"></a>
-                        <a href="#"><img src="assets/images/jpg/8.jpg"></a>
-                        <a href="#"><img src="assets/images/jpg/2.jpg"></a>
-                        <a href="#"><img src="assets/images/jpg/15.jpg"></a>
-                        <a href="#"><img src="assets/images/jpg/12.jpg"></a>
+                    <div class="column" id="column3">
 
                     </div>
                 </div>
@@ -96,23 +77,96 @@
                 </div>
             </div>
         </div>
+        </div>
 
     </main>
     <footer>
         <div class="footer-banner">
-            <div class="footer-text-container">
-                <div class="footer-text">RÉMI COZOT</div>
-            </div>
-            <div class="footer-items">
+            <div class="footer-container">
                 <img src="assets/images/lisic.png" alt="logo lisci" id="footer-img-1">
+                <div class="footer-text">
+                    <a href="">RÉMI COZOT</a>
+                </div>
+
+
+
                 <img src="assets/images/ULCO.png" alt="ulco logo" id="footer-img-2">
-            </div>
             <div class="footer-mail">remi.cozot@univ-littoral.fr</div>
         </div>
+    </div>
         <a href="#top" id="back-to-top">&#9650</a>
 
     </footer>
     <script>
+
+const downloadButton = document.getElementById('downloadButton');
+const continueButton = document.getElementById('continueButton');
+const cancelButton = document.getElementById('cancelButton');
+const modal = document.getElementById('myModal');
+const closeModal = document.getElementById('closeModal');
+const imageLinks = [  // Remplacez ceci par la liste de liens vers vos images
+'assets/images/jpg/0216_HDR_vesa_DISPLAY_HDR_1000.jpg', 'assets/images/jpg/0234_HDR_vesa_DISPLAY_HDR_1000.jpg', 'assets/images/jpg/0237_HDR_vesa_DISPLAY_HDR_1000.jpg', 'assets/images/jpg/0240_HDR_vesa_DISPLAY_HDR_1000.jpg', 'assets/images/jpg/0243_HDR_vesa_DISPLAY_HDR_1000.jpg', 'assets/images/jpg/0246_HDR_vesa_DISPLAY_HDR_1000.jpg', 'assets/images/jpg/0260_HDR_vesa_DISPLAY_HDR_1000.jpg', 'assets/images/jpg/0263_HDR_vesa_DISPLAY_HDR_1000.jpg', 'assets/images/jpg/0266_HDR_vesa_DISPLAY_HDR_1000.jpg', 'assets/images/jpg/0269_HDR_vesa_DISPLAY_HDR_1000.jpg', 'assets/images/jpg/0275_HDR_vesa_DISPLAY_HDR_1000.jpg', 'assets/images/jpg/0281_HDR_vesa_DISPLAY_HDR_1000.jpg', 'assets/images/jpg/0290_HDR_vesa_DISPLAY_HDR_1000.jpg', 'assets/images/jpg/0293_HDR_vesa_DISPLAY_HDR_1000.jpg', 'assets/images/jpg/0296_HDR_vesa_DISPLAY_HDR_1000.jpg', 'assets/images/jpg/0299_HDR_vesa_DISPLAY_HDR_1000.jpg', 'assets/images/jpg/0302_HDR_vesa_DISPLAY_HDR_1000.jpg', 'assets/images/jpg/0305_HDR_vesa_DISPLAY_HDR_1000.jpg', 'assets/images/jpg/0308_HDR_vesa_DISPLAY_HDR_1000.jpg', 'assets/images/jpg/0311_HDR_vesa_DISPLAY_HDR_1000.jpg', 'assets/images/jpg/0314_HDR_vesa_DISPLAY_HDR_1000.jpg', 'assets/images/jpg/0323_HDR_vesa_DISPLAY_HDR_1000.jpg', 'assets/images/jpg/0464_HDR_vesa_DISPLAY_HDR_1000.jpg', 'assets/images/jpg/0467_HDR_vesa_DISPLAY_HDR_1000.jpg', 'assets/images/jpg/0470_HDR_vesa_DISPLAY_HDR_1000.jpg', 'assets/images/jpg/0473_HDR_vesa_DISPLAY_HDR_1000.jpg', 'assets/images/jpg/0476_HDR_vesa_DISPLAY_HDR_1000.jpg', 'assets/images/jpg/0479_HDR_vesa_DISPLAY_HDR_1000.jpg', 'assets/images/jpg/0482_HDR_vesa_DISPLAY_HDR_1000.jpg', 'assets/images/jpg/0485_HDR_vesa_DISPLAY_HDR_1000.jpg', 'assets/images/jpg/0488_HDR_vesa_DISPLAY_HDR_1000.jpg', 'assets/images/jpg/0491_HDR_vesa_DISPLAY_HDR_1000.jpg', 'assets/images/jpg/0494_HDR_vesa_DISPLAY_HDR_1000.jpg', 'assets/images/jpg/0497_HDR_vesa_DISPLAY_HDR_1000.jpg', 'assets/images/jpg/0500_HDR_vesa_DISPLAY_HDR_1000.jpg', 'assets/images/jpg/0503_HDR_vesa_DISPLAY_HDR_1000.jpg', 'assets/images/jpg/0506_HDR_vesa_DISPLAY_HDR_1000.jpg', 'assets/images/jpg/0509_HDR_vesa_DISPLAY_HDR_1000.jpg', 'assets/images/jpg/0512_HDR_vesa_DISPLAY_HDR_1000.jpg', 'assets/images/jpg/0515_HDR_vesa_DISPLAY_HDR_1000.jpg', 'assets/images/jpg/0548_HDR_vesa_DISPLAY_HDR_1000.jpg', 'assets/images/jpg/0551_HDR_vesa_DISPLAY_HDR_1000.jpg', 'assets/images/jpg/0554_HDR_vesa_DISPLAY_HDR_1000.jpg', 'assets/images/jpg/0557_HDR_vesa_DISPLAY_HDR_1000.jpg', 'assets/images/jpg/0560_HDR_vesa_DISPLAY_HDR_1000.jpg', 'assets/images/jpg/0563_HDR_vesa_DISPLAY_HDR_1000.jpg', 'assets/images/jpg/0566_HDR_vesa_DISPLAY_HDR_1000.jpg', 'assets/images/jpg/0569_HDR_vesa_DISPLAY_HDR_1000.jpg', 'assets/images/jpg/0572_HDR_vesa_DISPLAY_HDR_1000.jpg', 'assets/images/jpg/0575_HDR_vesa_DISPLAY_HDR_1000.jpg', 'assets/images/jpg/0578_HDR_vesa_DISPLAY_HDR_1000.jpg', 'assets/images/jpg/0581_HDR_vesa_DISPLAY_HDR_1000.jpg', 'assets/images/jpg/0584_HDR_vesa_DISPLAY_HDR_1000.jpg', 'assets/images/jpg/0587_HDR_vesa_DISPLAY_HDR_1000.jpg'];
+const downloadQueue = [];
+
+downloadButton.addEventListener('click', function () {
+    modal.style.display = 'block';
+    downloadQueue.length = 0; // Réinitialisez la file de téléchargement
+    imageLinks.forEach((imageLink, index) => {
+        downloadQueue.push({
+            link: imageLink,
+            name: `image${index + 1}.jpg`
+        });
+    });
+});
+
+continueButton.addEventListener('click', function () {
+    modal.style.display = 'none';
+    if (downloadQueue.length > 0) {
+        downloadNextImage();
+    }
+});
+
+cancelButton.addEventListener('click', function () {
+    modal.style.display = 'none';
+});
+
+closeModal.addEventListener('click', function () {
+    modal.style.display = 'none';
+});
+
+function downloadNextImage() {
+    const imageInfo = downloadQueue.shift();
+    if (imageInfo) {
+        const a = document.createElement('a');
+        a.href = imageInfo.link;
+        a.download = imageInfo.name;
+        a.style.display = 'none';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        setTimeout(downloadNextImage, 100); // Attendez un court instant avant de télécharger la suivante
+    }
+}
+
+        const columns = document.querySelectorAll('.column');
+        const imageDirectory = 'assets/images/jpg/';
+        const imageFileNames = [
+            "0216_HDR_vesa_DISPLAY_HDR_1000.jpg","0234_HDR_vesa_DISPLAY_HDR_1000.jpg","0237_HDR_vesa_DISPLAY_HDR_1000.jpg","0240_HDR_vesa_DISPLAY_HDR_1000.jpg","0243_HDR_vesa_DISPLAY_HDR_1000.jpg","0246_HDR_vesa_DISPLAY_HDR_1000.jpg","0260_HDR_vesa_DISPLAY_HDR_1000.jpg","0263_HDR_vesa_DISPLAY_HDR_1000.jpg","0266_HDR_vesa_DISPLAY_HDR_1000.jpg","0269_HDR_vesa_DISPLAY_HDR_1000.jpg","0275_HDR_vesa_DISPLAY_HDR_1000.jpg","0281_HDR_vesa_DISPLAY_HDR_1000.jpg","0290_HDR_vesa_DISPLAY_HDR_1000.jpg","0293_HDR_vesa_DISPLAY_HDR_1000.jpg","0296_HDR_vesa_DISPLAY_HDR_1000.jpg","0299_HDR_vesa_DISPLAY_HDR_1000.jpg","0302_HDR_vesa_DISPLAY_HDR_1000.jpg","0305_HDR_vesa_DISPLAY_HDR_1000.jpg","0308_HDR_vesa_DISPLAY_HDR_1000.jpg","0311_HDR_vesa_DISPLAY_HDR_1000.jpg","0314_HDR_vesa_DISPLAY_HDR_1000.jpg","0323_HDR_vesa_DISPLAY_HDR_1000.jpg","0464_HDR_vesa_DISPLAY_HDR_1000.jpg","0467_HDR_vesa_DISPLAY_HDR_1000.jpg","0470_HDR_vesa_DISPLAY_HDR_1000.jpg","0473_HDR_vesa_DISPLAY_HDR_1000.jpg","0476_HDR_vesa_DISPLAY_HDR_1000.jpg","0479_HDR_vesa_DISPLAY_HDR_1000.jpg","0482_HDR_vesa_DISPLAY_HDR_1000.jpg","0485_HDR_vesa_DISPLAY_HDR_1000.jpg","0488_HDR_vesa_DISPLAY_HDR_1000.jpg","0491_HDR_vesa_DISPLAY_HDR_1000.jpg","0494_HDR_vesa_DISPLAY_HDR_1000.jpg","0497_HDR_vesa_DISPLAY_HDR_1000.jpg","0500_HDR_vesa_DISPLAY_HDR_1000.jpg","0503_HDR_vesa_DISPLAY_HDR_1000.jpg","0506_HDR_vesa_DISPLAY_HDR_1000.jpg","0509_HDR_vesa_DISPLAY_HDR_1000.jpg","0512_HDR_vesa_DISPLAY_HDR_1000.jpg","0515_HDR_vesa_DISPLAY_HDR_1000.jpg","0548_HDR_vesa_DISPLAY_HDR_1000.jpg","0551_HDR_vesa_DISPLAY_HDR_1000.jpg","0554_HDR_vesa_DISPLAY_HDR_1000.jpg","0557_HDR_vesa_DISPLAY_HDR_1000.jpg","0560_HDR_vesa_DISPLAY_HDR_1000.jpg","0563_HDR_vesa_DISPLAY_HDR_1000.jpg","0566_HDR_vesa_DISPLAY_HDR_1000.jpg","0569_HDR_vesa_DISPLAY_HDR_1000.jpg","0572_HDR_vesa_DISPLAY_HDR_1000.jpg","0575_HDR_vesa_DISPLAY_HDR_1000.jpg","0578_HDR_vesa_DISPLAY_HDR_1000.jpg","0581_HDR_vesa_DISPLAY_HDR_1000.jpg","0584_HDR_vesa_DISPLAY_HDR_1000.jpg","0587_HDR_vesa_DISPLAY_HDR_1000.jpg"];
+
+        columns.forEach(function (column, columnIndex) {
+            for (let i = columnIndex; i < imageFileNames.length; i += columns.length) {
+                const fileName = imageFileNames[i];
+                const a = document.createElement('a');
+                a.href = `page-ex.html?image=${imageDirectory}${fileName}`;
+                const img = document.createElement('img');
+                img.src = imageDirectory + fileName;
+                img.alt = 'Image';
+                a.appendChild(img);
+                column.appendChild(a);
+            }
+        });
+
+
         document.addEventListener('DOMContentLoaded', function () {
             const toggleSwitch = document.getElementById('toggleSwitch');
             const columns = document.querySelectorAll('.column');
@@ -135,48 +189,6 @@
                 }
             });
         });
-
-        const downloadButton = document.getElementById('downloadButton');
-        const continueButton = document.getElementById('continueButton');
-        const cancelButton = document.getElementById('cancelButton');
-        const modal = document.getElementById('myModal');
-        const closeModal = document.getElementById('closeModal');
-        const images = document.querySelectorAll('.img-back img');
-
-        downloadButton.addEventListener('click', function () {
-            modal.style.display = 'block';
-        });
-
-        continueButton.addEventListener('click', function () {
-            modal.style.display = 'none';
-            downloadImages();
-        });
-
-        cancelButton.addEventListener('click', function () {
-            modal.style.display = 'none';
-        });
-
-        closeModal.addEventListener('click', function () {
-            modal.style.display = 'none';
-        });
-
-        function downloadImages() {
-            images.forEach((image) => {
-                const a = document.createElement('a');
-                a.href = image.src;
-                a.download = image.alt;
-                a.style.display = 'none';
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-            });
-        }
-
-
-
-
-
-
     </script>
 </body>
 

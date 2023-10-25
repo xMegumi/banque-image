@@ -240,6 +240,16 @@ a {
     box-shadow: -17px 15px 17px -3px rgba(0, 0, 0, 0.1);
     border-radius: 15px;
   }
+
+  .container {
+    border-radius: 10px;
+  }
+
+  @media screen and (max-width: 1720px) and (orientation: landscape) {
+    .site-title-container {
+      padding-left: 55px;
+    }
+  }
   
   
   .all-download #downloadImg {
@@ -260,4 +270,227 @@ a {
   
   #downloadButton:hover {
     background-color: #F1F1F1;
+  }
+
+  @media screen and (max-width: 855px) and (orientation: portrait) {
+    .footer-banner {
+      display: flex;
+      flex-direction: column; /* Aligner les éléments en colonne */
+      align-items: center; /* Centrer horizontalement les éléments */
+      text-align: center; /* Centrer le texte à l'intérieur */
+      padding: 15px 0;
+      max-height: none;
+      height: auto;
+      margin: 0;
+    }
+    
+    .footer-text {
+      width: 100%;
+      left: 0;
+      max-height: 20px;
+      padding-top: 10px;
+    }
+    
+    .footer-items {
+      width: 100%;
+      text-align: center; 
+      margin-top: 10px;
+  
+    }
+    
+    #footer-img-1 {
+      max-width: 82%; 
+      margin-left: 0;
+      margin-bottom: 10px;
+  
+  
+    }
+
+    .list-items {
+      margin-left: 10px;
+    }
+    
+    .footer-mail {
+      width: 100%;
+      text-align: center; 
+      max-height: 20px;
+    }
+    
+    #footer-img-2 {
+      max-width: 100%; 
+      margin-right: 0;
+      height: auto;
+      width: 95%;
+      padding-left: 8px;
+      padding-right: 8px;
+      margin-top: 10px;
+    }
+  
+   
+    .site-title-container {
+      margin: 0px;
+      padding: 0px;
+    }
+    .title-main h1 {
+      margin: auto;
+      padding-left: 0;
+      font-size: 18px;
+    }
+    .menu-items {
+      display: block;
+    }
+  
+    
+  
+    .site-title-container {
+      padding-top: 10px;
+      padding-left: 10px;
+    }
+  
+    .main-container {
+      margin-right: 1%;
+      margin-left: 1%;
+    }
+  
+    nav::before {
+      border: solid 1px rgba(136,136,136,.3);
+      content: "☰";
+      display: flex;
+      width: auto;
+      height: auto;
+      float: right;
+      text-align: center;
+      font-family: 'roboto';
+      margin: 10px;
+      padding: 3px 10px 6px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  
+    nav:hover::before {
+      background-color: #DDDDDD;
+    }
+  
+    #menu-header-menu {
+      padding-left: 10px;
+    }
+    #menu-header-menu a {
+      font-size: 12px;
+      font-family: 'Roboto';
+      text-transform: uppercase;
+      color: #333333;
+    }
+  
+    nav:hover .menu-items ul{
+      display: block;
+    }
+  
+    .menu-items ul{
+      display: none;
+      float: left;
+      display: none;
+  
+    }
+  
+    .menu-items ul li {
+      width: 100%;
+      padding: 10px 8px;
+    }
+    
+    .column {
+      flex: 100%;
+      max-width: 100%;
+  
+    }
+  
+    .button-items {
+      display: none;
+    }
+  
+    .downloadButton-container {
+      height: 50px;
+    }
+  
+    .footer-text, .footer-mail {
+      padding-right: 0px;
+      margin-top: 0px;
+      max-width: 100%;
+      height: auto;
+    }
+    .container {
+      display: inline-block;
+    }
+
+
+
+    .img-back img {
+      max-width: 95%;
+      height: auto;
+    }
+
+    .menu-items ul { 
+      left: 0;
+    }
+
+    .displayed-image {
+      padding: 0px;
+      width: auto;
+    }
+
+    
+    .downloadButton-container {
+      display: flex;
+      margin-bottom: 20Px;
+    }
+
+    .modal {
+      font-family: 'roboto';
+      display: none;
+      position: fixed;
+      z-index: 1;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+    
+    .modal-content {
+      border-radius: 10px;
+      background-color: #fefefe;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 15em;
+      text-align: center;
+    }
+    
+    .close {
+      position: absolute;
+      right: 10px;
+      top: 5px;
+      color: #888;
+      font-size: 24px;
+      cursor: pointer;
+    }
+    
+    .modal button {
+    
+      background-color: #c3c3c3;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+    
+    }
+    
+    
+    .modal-content button {
+      margin: 10px;
+    }
+
+    
   }
